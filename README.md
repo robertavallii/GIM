@@ -11,3 +11,13 @@ Esercizi grafica in movimento (2023)
 [spostamento 3 frames](Esercizio_1A/spostamento_3.html)  
 [rotazione 2 frames](Esercizio_1A/rotazione_2.html)  
 [rotazione 3 frames](Esercizio_1A/rotazione_3.html)
+
+## Esercizio 1B
+
+## Esercizio 2A
+
+[Forma e senso](Esercizio_2A/template/index.html)  
+
+## Esercizio 2B
+
+Climate Action (es_2b)  
