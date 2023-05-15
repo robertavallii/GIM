@@ -20,4 +20,14 @@ Esercizi grafica in movimento (2023)
 
 ## Esercizio 2B
 
-[esercizio 2B](Esercizio_2B/Composizione_1.mp4)  
+[esercizio 2B](Esercizio_2B/Composizione_1.mp4)
+
+
+## Esercizio 3
+
+[Pong](Esercizio_3/pong_colorato)
+[Pong interattivo](Esercizio_3/pong_interattivo)
+[Pong interattivo](Esercizio_3/pioggia)
+
+
+
