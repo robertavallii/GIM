@@ -20,4 +20,4 @@ Esercizi grafica in movimento (2023)
 
 ## Esercizio 2B
 
-Climate Action (es_2b)  
+[esercizio 2B](Esercizio_2B/Composizione_1.mp4)  
