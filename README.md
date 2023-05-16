@@ -3,7 +3,7 @@ Esercizi grafica in movimento (2023)
 
 ## Esercizio 1A
 
-[file:///Users/rob/Desktop/GIM/Esercizio_1A/acceso_spento_2.html](Esercizio_1A/acceso_spento_2.html)  
+[acceso spento 2 frames](Esercizio_1A/acceso_spento_2.html)  
 [acceso spento 3 frames](Esercizio_1A/acceso_spento_3.html)  
 [aperto chiuso 2 frames](Esercizio_1A/aperto_chiuso_2.html)  
 [aperto chiuso 3 frames](Esercizio_1A/aperto_chiuso_3.html)  
