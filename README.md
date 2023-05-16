@@ -22,7 +22,7 @@ Esercizi grafica in movimento (2023)
 
 ## Esercizio 2B
 
-[esercizio 2B](Esercizio_2B/video_ok.HTML)
+[esercizio 2B](Esercizio_2B/video_ok.mp4)
 
 
 ## Esercizio 3
