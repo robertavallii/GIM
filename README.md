@@ -29,8 +29,7 @@ Esercizi grafica in movimento (2023)
 
 [Pong](Esercizio_3/index.html)  
 [Pong interattivo](Esercizio_3/pong_interattivo)  
-[Pioggia](Esercizio_3/pioggia)  
-[Neve]()
+[Pioggia](Esercizio_3/pioggia) 
 
 
 
