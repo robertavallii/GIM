@@ -34,6 +34,7 @@ Esercizi grafica in movimento (2023)
 
 
 ## Esercizio 4
+Il progetto consiste in un orologio digitale che mostra l'ora attuale, il tempo passato e il tempo futuro utilizzando una matrice di caratteri. La matrice organizza l'orologio in righe e colonne per rappresentare le ore e i minuti. Vengono utilizzati simboli specifici per indicare le diverse fasi del tempo.   
 
 [Clock Matrix](Esercizio_4/matrix/index.html)  
 [Orologio analogico](Esercizio_4/Orologio_analogico/index.html)  
