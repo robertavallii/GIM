@@ -2,7 +2,7 @@ let x;
 let y;
 let velX;
 let velY;
-let col;
+let hue;
 
 function setup() {
   createCanvas(900, 700);
@@ -10,39 +10,38 @@ function setup() {
   y = height / 2;
   velX = 5;
   velY = 5;
-  col = color(255);
+  hue = random(360); // Genera una tonalità casuale all'inizio
 }
 
 function draw() {
   background(0);
-  fill (col);
+  colorMode(HSB); // Imposta la modalità di colore su HSB per utilizzare la tonalità
+
+  let brightness = map(x, 100, width, 100, 100);
+  let col = color(hue, 100, brightness);
+
+  fill(col);
   noStroke();
   ellipse(x, y, 20, 20);
-  
-  // palliina tocca margine
+
   if (x + velX > width || x + velX < 0) {
-    velX = -velX; // cambia direz.
-    col = color(random(255), random(255), random(255)); // cambio colore
-  }  
-  // palliina tocca margine
-  if (y + velY > height || y + velY < 0) {
-    velY = -velY; // cambia direz.
-    col = color(random(255), random(255), random(255)); // cambio colore
+    velX = -velX;
+    hue = random(360); // Cambia la tonalità quando la pallina rimbalza
   }
 
-  // pallina non esce da canvas
+  if (y + velY > height || y + velY < 0) {
+    velY = -velY;
+    hue = random(360); // Cambia la tonalità quando la pallina rimbalza
+  }
+
   x = constrain(x + velX, 0, width);
   y = constrain(y + velY, 0, height);
 }
 
 function mouseMoved() {
-  // movimento maouse e pallina
   let dx = mouseX - x;
   let dy = mouseY - y;
 
-  // calcolo velocità in base alla distanza del mouse
   velX = dx / 10;
   velY = dy / 10;
-
-
 }
