@@ -1,4 +1,4 @@
-// Symbols to represent a minute, past, present, and future
+// simboli per minuti, ore ...
 const MINUTE_SYM = {
   PAST: ".  ", // '⬛ ',
   FUTURE: "*  ", // '⬜ ',
@@ -6,29 +6,29 @@ const MINUTE_SYM = {
   PRESENT_PROGRESS: ["˺", "˼", "˻", "˹"].map(c => c + "  ") 
 };
 
-// What time to start the clock display. Can be set with the `sh` query
-// param. Defaults to 0
+// ora per fare partire orologio. 
+// parametro di default 0
 const startHourQuery = location.search.match(/\?.*(sh)=(\d{1,2})/);
 const START_HOUR = startHourQuery ? parseInt(startHourQuery[2]) : 0;
 
-// How often to update the display in milliseconds
+// // Frequenza di aggiornamento del display in millisecondi
 const DISPLAY_UPDATE_INTERVAL = 1000;
 
-// Just in case we ever switch to metric time ;-)
+// Jtempo metrico (da capire?)
 const HOURS_IN_DAY = 24;
 const MINS_IN_HOUR = 60;
 
-// Prefix targetNum with zeros up to the specified digits
+// Prefix targetNum with zeros up to the specified digits (da capire)
 const zeroPad = (targetNum, digits) =>
   "0".repeat(digits - String(targetNum).length) + targetNum;
 
-// Display the clock matrix. Hours vertically, minutes horizontally.
+// matrice dll'orologioo (minuti e ore/ verticale e orizzontale)
 const printClockMatrix = cm => {
-  // Calculate column width and row height
-  const columnWidth = 3; // Decreased by one third
-  const rowHeight = 3; // Increased by one
+  // calcolare larghezza colonne e altezza righe
+  const columnWidth = 3; // diminuisci dimensione
+  const rowHeight = 3; // aumenta dimensione
 
-  // Hour labels
+  // etichette ore
   let clockString = " ".repeat(columnWidth);
   for (let mins = 0; mins < MINS_IN_HOUR; ++mins) {
     const minuteLabel = zeroPad(mins, 2);
@@ -36,7 +36,7 @@ const printClockMatrix = cm => {
   }
   clockString += "\n";
 
-  // Minute rows
+  // file dei minuti
   for (let hours = 0; hours < HOURS_IN_DAY; ++hours) {
     const shiftedHours = (hours + START_HOUR) % HOURS_IN_DAY;
     const hourLabel = zeroPad(shiftedHours, 2);
@@ -52,30 +52,30 @@ const printClockMatrix = cm => {
   return clockString;
 };
 
-// Generate a clock matrix for the current date
+// Generare una matrice di orologio per la data
 const generateClockMatrix = date => {
   const hours = (date.getHours() + HOURS_IN_DAY - START_HOUR) % HOURS_IN_DAY;
   const mins = date.getMinutes();
   const secs = date.getSeconds();
   const ms = date.getMilliseconds();
 
-  // Clock matrix. row:column -> hour:minute
+  // Matrice orologio. riga:colonna -> ora:minuto
   const clockMatrix = new Array(HOURS_IN_DAY);
   for (let h = 0; h < HOURS_IN_DAY; ++h) {
     clockMatrix[h] = new Array(MINS_IN_HOUR);
     for (let m = 0; m < MINS_IN_HOUR; ++m) {
-      // Past
+      // passato
       if (h < hours || (h === hours && m < mins)) {
         clockMatrix[h][m] = MINUTE_SYM.PAST;
       } else if (h === hours && m === mins) {
-        // Present
+        // presente
         clockMatrix[h][m] =
           MINUTE_SYM.PRESENT_PROGRESS[
             Math.floor((secs * 1000 + ms) / DISPLAY_UPDATE_INTERVAL) %
               MINUTE_SYM.PRESENT_PROGRESS.length
           ];
       } else if (h > hours || (h === hours && m > mins)) {
-        // Future
+        // futuro
         clockMatrix[h][m] = MINUTE_SYM.FUTURE;
       }
     }
@@ -84,7 +84,7 @@ const generateClockMatrix = date => {
   return clockMatrix;
 };
 
-// Update matrix clock
+// aggiorna matrice orologio
 const updateClock = () => {
   const clockMatrix = generateClockMatrix(new Date());
   const clockElement = document.querySelector("#clock");
@@ -93,7 +93,7 @@ const updateClock = () => {
   const clockString = printClockMatrix(clockMatrix);
   clockElement.innerHTML = clockString;
 
-  // Apply colors and font
+  // colori e font (?)
   const symbols = clockElement.querySelectorAll("span");
   symbols.forEach((symbol, index) => {
     const textContent = symbol.textContent.trim();
@@ -117,7 +117,7 @@ const updateClock = () => {
 
 updateClock();
 
-// Update display at a regular interval
+// aggiorna il display a intervalli regolari
 setInterval(() => {
   updateClock();
 }, DISPLAY_UPDATE_INTERVAL);
