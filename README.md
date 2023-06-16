@@ -35,7 +35,7 @@ Esercizi grafica in movimento (2023)
 
 [Clock Matrix](Esercizio_4/matrix/index.html)  
 [Orologio analogico](Esercizio_4/Orologio_analogico/index.html)  
-[Pioggia](Esercizio_3/pioggia) 
+[Orologio digitale colorato](Esercizio_4/orologio_digitale_colorato/index.html) 
 
 
 
