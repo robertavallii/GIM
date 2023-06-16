@@ -22,7 +22,7 @@ Esercizi grafica in movimento (2023)
 
 ## Esercizio 2B
 
-[Global warming](Esercizio_2B/video_ok.mp4)
+[Global warming](Esercizio_2B/video_ok.mp4)  
 [Slogan: Climate-Action-Now](Esercizio_2B/Esercizio_1A/template/acceso_spento_2.html)
 
 
