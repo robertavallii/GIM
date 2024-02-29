@@ -104,9 +104,7 @@ const updateClock = () => {
       background = SYMBOL_COLORS.DOT.background;
       fontFamily = "Helvetica";
     } else {
-      foreground = "#FF0000"; // Red color
-      background = "#FFFFFF"; // White color
-      fontFamily = "Helvetica";
+    
     }
 
     symbol.style.color = foreground;
